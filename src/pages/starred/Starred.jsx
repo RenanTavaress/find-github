@@ -13,7 +13,6 @@ const Starred = () => {
 
    useEffect(() => {
       async function starred (){
-         setLoading(true)
          const response = await api.get(`/users/${user}/starred`)
          setStarred(response.data)
          setLoading(true)

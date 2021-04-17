@@ -6,7 +6,7 @@ import Spinner from '../../components/Spinner/Index'
 
 const useStyles = makeStyles({
    root: {
-      paddingTop: '15px'
+      paddingTop: '15px',
    }
 })
 
@@ -32,16 +32,18 @@ const Repositorys = () => {
          {  
             loading ?
             user.map(userr => (
-               <a key={userr.id}
-               target="_blank"
-               href={`https://github.com/${params.user}/${userr.name}`}
-               rel="noreferrer">
-                  <Typography 
-                     classes={{root: classes.root}} 
-                     align="center" 
-                     color="textPrimary">
+               
+               <Typography 
+                  classes={{root: classes.root}} 
+                  align="center" 
+                  color="textPrimary">
+                     <a key={userr.id}
+                        target="_blank"
+                        href={`https://github.com/${params.user}/${userr.name}`}
+                        rel="noreferrer">
                         {userr.name}
-                  </Typography></a>
+                     </a>
+                  </Typography>
             ))
             :  <Spinner />
          }
