@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Index from '../headers/index'
+import Index from '../../components/headers/index'
 import Repositorys from '../repositorys/Repository';
 import Starred from '../starred/Starred';
 
