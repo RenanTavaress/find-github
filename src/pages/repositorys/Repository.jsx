@@ -12,11 +12,11 @@ const useStyles = makeStyles({
 
 const Repositorys = () => {
    const [user, setUser] = useState([])
-   const {params} = useRouteMatch()
-
    const [ loading, setLoading ] = useState(false)
-   const classes = useStyles()
+
+   const { params } = useRouteMatch()
    const history = useHistory()
+   const classes = useStyles()
 
    useEffect(() => {
       api.get(`/users/${params.user}/repos`).then(response => {
@@ -29,29 +29,40 @@ const Repositorys = () => {
    },[params.user, history])
 
    return (
-      <>
-         <div>
-         {  
-            loading ?
-            user.map(userr => (
-               <Typography 
-                  classes={{root: classes.root}} 
-                  align="center" 
-                  color="textPrimary">
-                     <a 
-                        key={userr.id}
-                        target="_blank"
-                        href={`https://github.com/${params.user}/${userr.name}`}
-                        rel="noreferrer">
-                        {userr.name}
-                     </a>
-                  </Typography>
-            ))
-            :  <Spinner />
-         }
-         </div>
-         
-      </>
+      <div>
+       
+         { !loading && <Spinner/>}
+
+         {loading && !user.length && (
+            <Typography 
+               align="center" 
+               classes={{root: classes.root}}
+               variant="h5" component="h2">
+                  No Results Found
+            </Typography>
+         )}
+
+         {loading && user.length > 0 && (
+            <>
+               {
+                  user.map(repository => (
+                     <Typography 
+                        key={repository.id}
+                        classes={{root: classes.root}} 
+                        align="center" 
+                        color="textPrimary">
+                        <a
+                           target="_blank"
+                           href={`https://github.com/${params.user}/${repository.name}`}
+                           rel="noreferrer">
+                              {repository.name}
+                        </a>
+                     </Typography>
+                  ))
+               }
+            </>
+         )}
+      </div>
    )
 }
 

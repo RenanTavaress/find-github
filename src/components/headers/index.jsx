@@ -6,18 +6,16 @@ import api from '../../api/api';
 const Headers = ({onChange, value2}) => {
    const {user} = useParams()
    const [id, setId] = useState('')
-   const [loading, setLoading] = useState(false)
 
    useEffect(() => {
       api.get(`/users/${user}`).then(response => {
          setId(response.data.avatar_url)
       })
-      setLoading(true)
-   },[user, loading])
+   },[user])
 
    return(
       <>
-         <Typography variant="h4" component="h2" align="center" >Bem vindo ao github de {user}</Typography>
+         <Typography variant="h4" component="h2" align="center" >Bem vindo ao github do {user}</Typography>
          <div align="center" >
             <Avatar alt="Logo" src={id} style={{top: '5px', margin: '20px', height: '70px', width: '70px' }} />
          </div>
@@ -30,10 +28,12 @@ const Headers = ({onChange, value2}) => {
                textColor="primary"
                centered
             >
+               
                <Tab label="Repositorios" />
                <Tab label="Starred" />
             </Tabs>
          </Paper>
+         
       </>
    )
 }

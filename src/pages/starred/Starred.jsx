@@ -21,20 +21,42 @@ const Starred = () => {
    }, [user])
 
    return (
-      <>
-         {  
-            loading ?
-            <Card align="center">
-               {starred.map(stars => ( 
-                  <CardContent key={stars.id} >
-                     <Typography variant="h5" component="h2" >{stars.name}</Typography>
-                     <Typography color="textSecondary" >{stars.description}</Typography >
-                  </CardContent>  
-               ))}
-            </Card>
-            :  <Spinner/> 
-         }
-      </>
+      <div>
+
+         {!loading && <Spinner/>}
+
+         {loading && !starred.length && (
+            <Typography 
+            	align="center" 
+            	variant="h5" component="h2">
+               	No Results Found
+            </Typography>
+         )}
+
+         {loading && starred.length > 0 && (
+            <>
+               {  
+                  <Card align="center">
+                     {starred.map(stars => ( 
+                        <CardContent key={stars.id} >
+                           <Typography 
+                           	variant="h5" 
+                           	component="h2">
+                              	{stars.name}
+                           </Typography>
+
+                           <Typography 
+                           	color="textSecondary">
+                              	{stars.description}
+                           </Typography >
+                           
+                        </CardContent>  
+                     ))}
+                  </Card>
+               }
+            </>
+         )}
+      </div>
    )
 }
 

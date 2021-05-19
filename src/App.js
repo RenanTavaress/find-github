@@ -6,8 +6,6 @@ import 'fontsource-roboto';
 import Initial from './pages/Initial/Initial';
 import Pagina404 from './pages/Erro404/Pagina404';
 
-
-
 function App() {
   	return (
    	<BrowserRouter>
