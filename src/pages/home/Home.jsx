@@ -22,14 +22,15 @@ const Home = () => {
             <Link  
                to={`/users/${name}`}
                style={{ textDecoration: 'none' }}> 
+               
                <Button
-                  
                   type="button"
                   variant="contained" 
                   color="primary"
                   fullWidth >
                   Pesquisar 
                </Button>
+               
             </Link>
          </form>
       </DivInicial>
