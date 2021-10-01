@@ -1,20 +1,19 @@
 import React from 'react'
-import {CircularProgress, makeStyles} from '@material-ui/core';
+import {CircularProgress} from '@material-ui/core';
+import styled from 'styled-components'
 
-const useStyles = makeStyles({
-   root: {
-      display: 'flex',
-      justifyContent: 'center'
-   }
-})
+
+const SpinnerStyle = styled.div`
+   display: flex;
+   justify-content: center;
+`
 
 const Spinner = () => {
-   const classes = useStyles()
 
    return (
-      <div className={classes.root}>
+      <SpinnerStyle>
          <CircularProgress />
-      </div>
+      </SpinnerStyle>
    )
 } 
 

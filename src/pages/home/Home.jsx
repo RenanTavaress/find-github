@@ -1,27 +1,7 @@
 import { Button, TextField, } from '@material-ui/core';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import styled from 'styled-components';
-
-
-const DivInicial = styled.div`
-   position: relative;
-   width: 500px;
-   line-height: 50px;
-   text-align: center;
-   margin-left: auto;
-   margin-right: auto;
-   top: 80px;
-   
-`
-
-const TituloInicial = styled.h1`
-   text-align: center;
-   font-size: 3rem;
-   font-weight: lighter;
-`
-
-
+import {DivInicial,TituloInicial} from './style'
 
 const Home = () => {
    const [name, setName] = useState('')
@@ -29,7 +9,7 @@ const Home = () => {
    
       <DivInicial>
          <form>
-            <TituloInicial> FindGithub</TituloInicial>
+            <TituloInicial>FindGithub</TituloInicial>
 
             <TextField 
                value={name} 
@@ -42,14 +22,15 @@ const Home = () => {
             <Link  
                to={`/users/${name}`}
                style={{ textDecoration: 'none' }}> 
+               
                <Button
-                  
                   type="button"
                   variant="contained" 
                   color="primary"
                   fullWidth >
                   Pesquisar 
                </Button>
+               
             </Link>
          </form>
       </DivInicial>
