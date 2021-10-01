@@ -43,6 +43,7 @@ const Starred = () => {
                            	variant="h5" 
                            	component="h2">
                               	{stars.name}
+                                 
                            </Typography>
 
                            <Typography 
