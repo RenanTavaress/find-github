@@ -1,18 +1,35 @@
-import { Button, Container, TextField, Typography } from '@material-ui/core';
+import { Button, TextField, } from '@material-ui/core';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
-import api from '../../api/api';
+import styled from 'styled-components';
+
+
+const DivInicial = styled.div`
+   position: relative;
+   width: 500px;
+   line-height: 50px;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   top: 80px;
+   
+`
+
+const TituloInicial = styled.h1`
+   text-align: center;
+   font-size: 3rem;
+   font-weight: lighter;
+`
+
+
 
 const Home = () => {
    const [name, setName] = useState('')
    return (
-      <Container component="article" maxWidth="sm">
+   
+      <DivInicial>
          <form>
-            <Typography variant="h3" 
-               component="h1" 
-               align="center">
-                  FindGithub
-            </Typography>
+            <TituloInicial> FindGithub</TituloInicial>
 
             <TextField 
                value={name} 
@@ -22,11 +39,11 @@ const Home = () => {
                fullWidth
             />
 
-             <Link  
+            <Link  
                to={`/users/${name}`}
                style={{ textDecoration: 'none' }}> 
                <Button
-                 
+                  
                   type="button"
                   variant="contained" 
                   color="primary"
@@ -35,7 +52,7 @@ const Home = () => {
                </Button>
             </Link>
          </form>
-      </Container>
+      </DivInicial>
    )
 }
 
