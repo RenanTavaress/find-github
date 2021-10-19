@@ -18,6 +18,11 @@ const Starred = () => {
          setLoading(true)
       }
       starred()
+
+      return () => {
+         console.log('Removendo o starred')
+      }
+      
    }, [user])
 
    return (
