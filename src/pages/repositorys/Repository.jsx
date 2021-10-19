@@ -2,7 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import api from '../../api/api'
-import Spinner from '../../components/Spinner/Index'
+import Spinner from '../../components/Spinner/Spinner'
 
 const useStyles = makeStyles({
    root: {

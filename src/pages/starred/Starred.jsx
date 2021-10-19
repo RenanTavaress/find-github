@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../api/api';
-import Spinner from '../../components/Spinner/Index';
+import Spinner from '../../components/Spinner/Spinner';
 
 const Starred = () => {
    const [starred, setStarred] = useState([])

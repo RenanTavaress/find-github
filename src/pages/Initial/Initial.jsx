@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { ButtonTab } from '../../components/ButtonTab/Index';
+import { ButtonTab } from '../../components/ButtonTab/ButtonTab';
 
 
-import Headers from '../../components/headers/index'
+import Headers from '../../components/Headers/Headers'
 import Repositorys from '../repositorys/Repository';
 import Starred from '../starred/Starred';
 
@@ -20,7 +20,6 @@ const Initial = () => {
  
    return (
       <div>
-         
          <Headers  />
          
          <ButtonTab onChange={handleTab1} nameButton="Tab1" />
