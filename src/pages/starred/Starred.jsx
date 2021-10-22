@@ -1,10 +1,11 @@
 import { Card, CardContent, Typography } from '@material-ui/core';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect,  useState} from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../api/api';
 import Spinner from '../../components/Spinner/Spinner';
+import {NotFound} from '../../components/NotFound/NotFound';
+
 
 const Starred = () => {
    const [starred, setStarred] = useState([])
@@ -18,10 +19,6 @@ const Starred = () => {
          setLoading(true)
       }
       starred()
-
-      return () => {
-         console.log('Removendo o starred')
-      }
       
    }, [user])
 
@@ -30,13 +27,9 @@ const Starred = () => {
 
          {!loading && <Spinner/>}
 
-         {loading && !starred.length && (
-            <Typography 
-            	align="center" 
-            	variant="h5" component="h2">
-               	No Results Found
-            </Typography>
-         )}
+         {loading && !starred.length && 
+            <NotFound>No Results Found</NotFound>
+         } 
 
          {loading && starred.length > 0 && (
             <>

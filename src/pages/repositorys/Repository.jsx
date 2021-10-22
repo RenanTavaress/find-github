@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import api from '../../api/api'
 import Spinner from '../../components/Spinner/Spinner'
+import {NotFound} from '../../components/NotFound/NotFound';
 
 const useStyles = makeStyles({
    root: {
@@ -32,15 +33,10 @@ const Repositorys = () => {
       <div>
        
          { !loading && <Spinner/>}
-
-         {loading && !user.length && (
-            <Typography 
-               align="center" 
-               classes={{root: classes.root}}
-               variant="h5" component="h2">
-                  No Results Found
-            </Typography>
-         )}
+         
+         {loading && !user.length && 
+            <NotFound>No Results Found</NotFound>
+         } 
 
          {loading && user.length > 0 && (
             <>
