@@ -2,7 +2,8 @@ import { Avatar } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import api from '../../api/api';
-import {Header ,TituloHome} from './styles'
+import {Header} from './styles'
+import {TituloInicial} from '../../pages/home/style'
 
 
 const Headers = () => {
@@ -17,7 +18,7 @@ const Headers = () => {
 
    return(
       <Header>
-         <TituloHome >Bem vindo ao github do {user}</TituloHome>
+         <TituloInicial >Bem vindo ao github do {user}</TituloInicial>
          <div align="center" >
             <Avatar alt="Logo" src={id} style={{top: '5px', margin: '20px', height: '70px', width: '70px' }} />
          </div>         

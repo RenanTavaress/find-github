@@ -6,10 +6,3 @@ export const Header = styled.header`
    height: auto;
    
 `
-
-
-export const TituloHome = styled.h1`
-   text-align: center;
-   font-size: 3rem;
-   font-weight: lighter;
-`
