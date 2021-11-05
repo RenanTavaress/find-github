@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ButtonTab } from '../../components/ButtonTab/ButtonTab';
+import { Nav} from './Styles'
 
 
 import Headers from '../../components/Headers/Headers'
@@ -21,9 +22,12 @@ const Initial = () => {
    return (
       <div>
          <Headers />
-               
-         <ButtonTab onChange={handleTab1} nameButton="Tab1" />
-         <ButtonTab onChange={handleTab2} nameButton="Tab2" />
+
+         <Nav>
+            <ButtonTab onChange={handleTab1} nameButton="Tab1" />
+            <ButtonTab onChange={handleTab2} nameButton="Tab2" />
+         </Nav>
+         
 
          {activeTab === 0 ? <Repositorys /> : <Starred />}
                

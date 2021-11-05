@@ -3,8 +3,7 @@ import {ButtonTabStyle} from './styles'
 
 export const ButtonTab = ({onChange, nameButton}) => {
    return (
-      <nav>
-         <ButtonTabStyle onClick={onChange}>{nameButton}</ButtonTabStyle>
-      </nav>
+      <ButtonTabStyle onClick={onChange}>{nameButton}</ButtonTabStyle>
+      
    )
 }
