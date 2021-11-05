@@ -1,14 +1,22 @@
 import { Button, TextField, } from '@material-ui/core';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import {DivInicial,TituloInicial} from './style'
 
 const Home = () => {
+   const history = useHistory()
    const [name, setName] = useState('')
+
+   function handleOnSubmit(e){
+      e.preventDefault()
+      history.push(`/users/${name}`)
+   }
+
+
    return (
    
       <DivInicial>
-         <form>
+         <form onSubmit={handleOnSubmit}>
             <TituloInicial>FindGithub</TituloInicial>
 
             <TextField 
@@ -17,21 +25,14 @@ const Home = () => {
                label="Digite um nome de usuario" 
                margin="normal" 
                fullWidth
-            />
-
-            <Link  
-               to={`/users/${name}`}
-               style={{ textDecoration: 'none' }}> 
-               
-               <Button
-                  type="button"
-                  variant="contained" 
-                  color="primary"
-                  fullWidth >
-                  Pesquisar 
-               </Button>
-               
-            </Link>
+            /> 
+            <Button
+               type="submit"
+               variant="contained" 
+               color="primary"
+               fullWidth >
+               Pesquisar 
+            </Button>
          </form>
       </DivInicial>
    )
