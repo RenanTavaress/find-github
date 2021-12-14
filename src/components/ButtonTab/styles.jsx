@@ -6,13 +6,13 @@ export const ButtonTabStyle = styled.button`
    color: white;
    border: none;
    padding: 10px;
-   text-decoration: none;
+   margin:  0 0 0 14px; 
    cursor: pointer;
-   transition: 'background' .3s;
+   transition: 0.3s;
    border-radius: 5px;
 
-   &:hover{
-
+   :hover{
+      background-color: blue;
    }
 
 `

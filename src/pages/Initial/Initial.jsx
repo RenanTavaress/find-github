@@ -24,8 +24,8 @@ const Initial = () => {
          <Headers />
 
          <Nav>
-            <ButtonTab onChange={handleTab1} nameButton="Tab1" />
-            <ButtonTab onChange={handleTab2} nameButton="Tab2" />
+            <ButtonTab onChange={handleTab1} nameButton="Repositorios" />
+            <ButtonTab onChange={handleTab2} nameButton="Starred" />
          </Nav>
          
 

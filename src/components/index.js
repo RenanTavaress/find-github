@@ -10,5 +10,4 @@ export const Globalstyle = createGlobalStyle`
       text-decoration: none;
    }
 
-
 `
