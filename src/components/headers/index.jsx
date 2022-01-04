@@ -2,13 +2,13 @@ import { Avatar } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import api from '../../api/api';
-import {Header} from './styles'
-import {TituloInicial} from '../../pages/home/style'
+import { Header } from './styles'
+import { TituloInicial } from '../../pages/Home/styles'
 
 
 const Headers = () => {
-   const {user} = useParams()
-   const [id, setId] = useState('')
+   const { user } = useParams()
+   const [ id, setId ] = useState('')
 
    useEffect(() => {
       api.get(`/users/${user}`).then(response => {

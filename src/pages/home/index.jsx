@@ -1,5 +1,6 @@
 import { Button, TextField, } from '@material-ui/core';
 import { useState } from 'react';
+<<<<<<< Updated upstream:src/pages/home/Home.jsx
 import { useHistory } from 'react-router-dom'
 import {DivInicial,TituloInicial} from './style'
 
@@ -13,6 +14,13 @@ const Home = () => {
    }
 
 
+=======
+import { Link } from 'react-router-dom'
+import { DivInicial, TituloInicial } from './styles'
+
+const Home = () => {
+   const [ name, setName ] = useState('')
+>>>>>>> Stashed changes:src/pages/home/index.jsx
    return (
    
       <DivInicial>

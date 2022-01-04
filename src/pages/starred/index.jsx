@@ -3,14 +3,14 @@ import React from 'react';
 import { useEffect,  useState} from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../api/api';
-import Spinner from '../../components/Spinner/Spinner';
-import {NotFound} from '../../components/NotFound/NotFound';
+import Spinner from '../../components/Spinner';
+import { NotFound } from '../../components/NotFound';
 
 
 const Starred = () => {
    const [starred, setStarred] = useState([])
    const [ loading, setLoading ] = useState(false)
-   const {user} = useParams()
+   const { user } = useParams()
 
    useEffect(() => {
       async function starred (){

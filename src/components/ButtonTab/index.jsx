@@ -1,5 +1,5 @@
 import React from "react"
-import {ButtonTabStyle} from './styles'
+import { ButtonTabStyle } from './styles'
 
 export const ButtonTab = ({onChange, nameButton}) => {
    return (

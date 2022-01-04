@@ -1,10 +1,10 @@
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/home/Home';
-import 'fontsource-roboto';
-import Initial from './pages/Initial/Initial';
-import Pagina404 from './pages/Erro404/Pagina404';
+import Home from './pages/Home';
+import Initial from './pages/Initial';
+import Pagina404 from './pages/Erro404';
 import { Globalstyle } from './components/index';
+import 'fontsource-roboto';
 
 function App() {
   	return (
