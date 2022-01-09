@@ -12,13 +12,13 @@ function App() {
 		<>
 			<Globalstyle/>
 			<BrowserRouter>
-				<Switch>
-					<TabProvider>
-						<Route exact path="/" component={Home}/>
-						<Route path="/users/:user" component={Initial}/>
-					</TabProvider>	
-					<Route path=""component={Pagina404}/>
-				</Switch>
+				<TabProvider>
+					<Switch>
+						<Route exact path="/" component={ Home }/>
+						<Route path="/users/:user" component={ Initial }/>	
+						<Route path="" component={ Pagina404 }/>
+					</Switch>
+				</TabProvider>	
 			</BrowserRouter>
 		</>
   	)
