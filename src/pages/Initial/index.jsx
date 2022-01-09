@@ -1,30 +1,24 @@
-import React, { useState } from 'react'
-import { ButtonTab } from '../../components/ButtonTab';
+import React from 'react'
+import { ButtonTab } from '../../components/ButtonTab/ButtonTab';
 import { Nav } from './Styles'
-import Headers from '../../components/Headers'
-import Repositorys from '../repositorys';
-import Starred from '../starred';
+import { TabContext } from '../../common/context/Tab'
 
+
+import Headers from '../../components/Headers/Headers'
+import Repositorys from '../repositorys/Repository';
+import Starred from '../starred/Starred';
+import { useContext } from 'react';
 
 const Initial = () => {
+   const { activeTab, handleTab1, handleTab2 } = useContext(TabContext)
 
-   const [ activeTab, setActiveTab ] = useState(0)
-
-   const handleTab1 = () => {
-      setActiveTab(0);
-   };
-   
-   const handleTab2 = () => {
-      setActiveTab(1);
-   };
-   
    return (
       <div>
          <Headers />
 
          <Nav>
-            <ButtonTab onChange={handleTab1} nameButton="Repositorios" />
-            <ButtonTab onChange={handleTab2} nameButton="Starred" />
+            <ButtonTab onChange={ handleTab1 } nameButton="Repositorios"/>
+            <ButtonTab onChange={ handleTab2 } nameButton="Starred" />
          </Nav>
          
 
