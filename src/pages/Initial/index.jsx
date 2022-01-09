@@ -1,12 +1,12 @@
 import React from 'react'
-import { ButtonTab } from '../../components/ButtonTab/ButtonTab';
+import { ButtonTab } from '../../components/ButtonTab';
 import { Nav } from './Styles'
 import { TabContext } from '../../common/context/Tab'
 
 
-import Headers from '../../components/Headers/Headers'
-import Repositorys from '../repositorys/Repository';
-import Starred from '../starred/Starred';
+import Headers from '../../components/Headers'
+import Repositorys from '../repositorys';
+import Starred from '../starred';
 import { useContext } from 'react';
 
 const Initial = () => {
