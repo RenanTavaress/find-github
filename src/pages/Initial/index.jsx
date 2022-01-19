@@ -1,13 +1,13 @@
 import React from 'react'
 import { ButtonTab } from '../../components/ButtonTab';
 import { Nav } from './Styles'
+import { useContext } from 'react';
 import { TabContext } from '../../common/context/Tab'
-
-
 import Headers from '../../components/Headers'
 import Repositorys from '../repositorys';
 import Starred from '../starred';
-import { useContext } from 'react';
+
+
 
 const Initial = () => {
    const { activeTab, handleTab1, handleTab2 } = useContext(TabContext)
@@ -20,10 +20,10 @@ const Initial = () => {
             <ButtonTab onChange={ handleTab1 } nameButton="Repositorios"/>
             <ButtonTab onChange={ handleTab2 } nameButton="Starred" />
          </Nav>
-         
+         <hr/>
 
-         {activeTab === 0 ? <Repositorys /> : <Starred />}
-               
+			{activeTab === 0 ? <Repositorys /> : <Starred />}
+			
       </div>
          
    )

@@ -8,7 +8,7 @@ import { NotFound } from '../../components/NotFound';
 
 
 const Starred = () => {
-   const [starred, setStarred] = useState([])
+   const [ starred, setStarred ] = useState([])
    const [ loading, setLoading ] = useState(false)
    const { user } = useParams()
 
@@ -23,12 +23,12 @@ const Starred = () => {
    }, [user])
 
    return (
-      <div>
+      <section>
 
          {!loading && <Spinner/>}
-
+			
          {loading && !starred.length && 
-            <NotFound>No Results Found</NotFound>
+				<NotFound>No Results Found</NotFound>
          } 
 
          {loading && starred.length > 0 && (
@@ -55,7 +55,7 @@ const Starred = () => {
                }
             </>
          )}
-      </div>
+      </section>
    )
 }
 

@@ -1,23 +1,16 @@
-import { makeStyles, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import api from '../../api/api'
 import Spinner from '../../components/Spinner'
 import { NotFound } from '../../components/NotFound';
-
-const useStyles = makeStyles({
-   root: {
-      paddingTop: '15px',
-   }
-})
-
+import { Container, ReposUl, ReposA } from './styles'
+import { GoGitBranch } from 'react-icons/go'
 const Repositorys = () => {
-   const [user, setUser] = useState([])
+   const [ user, setUser ] = useState([])
    const [ loading, setLoading ] = useState(false)
 
    const { params } = useRouteMatch()
    const history = useHistory()
-   const classes = useStyles()
 
    useEffect(() => {
       api.get(`/users/${params.user}/repos`).then(response => {
@@ -30,7 +23,7 @@ const Repositorys = () => {
    },[params.user, history])
 
    return (
-      <div>
+      <Container>
        
          { !loading && <Spinner/>}
          
@@ -39,26 +32,34 @@ const Repositorys = () => {
          } 
 
          {loading && user.length > 0 && (
-            <>
+            <ReposUl>
                {
                   user.map(repository => (
-                     <Typography 
-                        key={repository.id}
-                        classes={{root: classes.root}} 
-                        align="center" 
-                        color="textPrimary">
-                        <a
-                           target="_blank"
-                           href={`https://github.com/${params.user}/${repository.name}`}
-                           rel="noreferrer">
-                              {repository.name}
-                        </a>
-                     </Typography>
+							<ReposA 
+								key={repository.id}
+								target="_blank"
+								href={`https://github.com/${params.user}/${repository.name}`}
+								rel="noreferrer"
+							> 
+								<p>
+									{repository.name}
+								</p>
+								
+								<span>
+									Linguagem: 
+									{repository.language ? ' ' + repository.language : ''} 
+								</span>
+
+								<span>
+									{repository.forks_count}
+									<GoGitBranch/>
+								</span>
+							</ReposA>
                   ))
                }
-            </>
+            </ReposUl>
          )}
-      </div>
+      </Container>
    )
 }
 

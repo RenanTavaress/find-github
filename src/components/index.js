@@ -10,4 +10,9 @@ export const Globalstyle = createGlobalStyle`
       text-decoration: none;
    }
 
+	html, body {
+		height: 100%;
+		background-color: #F6F8FA;
+	}	
+	
 `
