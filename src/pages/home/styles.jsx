@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const DivInicial = styled.div`
 	position: relative;
@@ -8,11 +8,10 @@ export const DivInicial = styled.div`
 	margin-left: auto;
 	margin-right: auto;
 	top: 80px;
-
-`
+`;
 
 export const TituloInicial = styled.h1`
 	text-align: center;
 	font-size: 3rem;
 	font-weight: lighter;
-`
+`;
