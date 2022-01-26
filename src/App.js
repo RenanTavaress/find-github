@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home/index";
+import Home from "./pages/home";
 import Initial from "./pages/Initial";
 import Pagina404 from "./pages/Erro404";
 import { Globalstyle } from "./components/index";
