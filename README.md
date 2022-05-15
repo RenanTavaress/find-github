@@ -1,3 +1,4 @@
+<h2>O Que é o projeto</h2>
 O projeto tem como objetivo usuário procurar seu nome de usuário do GitHub e ele irá 
 listar todos os repositórios do usuário e os repositórios que ele gostou.
 
